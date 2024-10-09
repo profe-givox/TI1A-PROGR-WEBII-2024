@@ -14,8 +14,8 @@ def contact(request):
         request,
         'app/contact.html',
         {
-            'title':'Contact',
-            'message':'Your contact page.',
+            'title':'Contacto',
+            'message':'Pagina de contacto.',
             'year':datetime.now().year,
         }
     )
@@ -27,8 +27,8 @@ def about(request):
         request,
         'app/about.html',
         {
-            'title':'About',
-            'message':'Your application description page.',
+            'title':'Acerca de',
+            'message':'Descripcion del sitio.',
             'year':datetime.now().year,
         }
     )
