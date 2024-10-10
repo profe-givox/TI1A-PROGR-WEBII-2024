@@ -17,6 +17,18 @@ urlpatterns = [
     
     path('', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
-    path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
+    path('login/', LoginView.as_view(
+            template_name='app/login.html',
+            authentication_form=forms.BootstrapAuthenticationForm,
+            extra_context=
+            {
+                'title': 'Log in',
+                'year' : datetime.now().year,
+            },
+            next_page="app/"
+            ),
+            name="login"
+        ),
+    path('logout/', LogoutView.as_view(next_page='app:about'), name='logout'),
     path('admin/', admin.site.urls),
 ]
