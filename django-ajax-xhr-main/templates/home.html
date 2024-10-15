@@ -21,6 +21,7 @@
         <h2>POST</h2>
       </div>
       <form id="addTodoForm">
+        {% csrf_token %}
         <div class="mb-3">
           <label for="todoTaskPost">Task</label>
           <input type="text" class="form-control" id="todoTaskPost" placeholder="Task" required>
@@ -100,7 +101,10 @@
         task: addTodoForm.elements["todoTaskPost"].value,
         completed: addTodoForm.elements["todoCompletedPost"].checked,
       }
+      datasend = $(addTodoForm).serialize();
+      console.log(datasend);
       addTodo(allTodosUrl, formData);
+      //addTodo(allTodosUrl, datasend);
       addTodoForm.reset();
     });
 

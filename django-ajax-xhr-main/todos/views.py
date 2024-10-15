@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404, render
 from todos.models import Todo
 
 
-def home(request):
+def     home(request):
     return render(request, "home.html")
 
 
